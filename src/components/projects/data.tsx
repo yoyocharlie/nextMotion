@@ -105,7 +105,10 @@ export const timelineData = [
         <p className="mb-8 text-muted-foreground">This very website!</p>
         <div className="mb-8 flex flex-wrap gap-2">
           {tech["Modern UI"].map((text) => (
-            <Badge className="h-5 cursor-default rounded-sm border-none shadow-[2px_2px_#00000069_inset] transition-all duration-100 ease-in-out hover:translate-x-[-1px] hover:bg-white hover:shadow-[1px_1px_#00000069_inset]">
+            <Badge
+              key={text}
+              className="h-5 cursor-default rounded-sm border-none shadow-[2px_2px_#00000069_inset] transition-all duration-100 ease-in-out hover:translate-x-[-1px] hover:bg-white hover:shadow-[1px_1px_#00000069_inset]"
+            >
               {text}
             </Badge>
           ))}
