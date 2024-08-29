@@ -9,7 +9,7 @@ import { LinkPreview } from "./link-preview";
 
 interface TimelineEntry {
   title: string;
-  projectUrls: {
+  projectUrls?: {
     url: string;
     icon: JSX.Element;
   }[];
