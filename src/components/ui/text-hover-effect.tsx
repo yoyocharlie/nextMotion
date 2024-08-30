@@ -30,9 +30,9 @@ export const TextHoverEffect = ({
   return (
     <svg
       ref={svgRef}
-      width="100%"
-      height="100%"
-      viewBox="0 0 300 100"
+      width="50%"
+      height="50%"
+      viewBox="0 0 400 100"
       xmlns="http://www.w3.org/2000/svg"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
@@ -63,10 +63,6 @@ export const TextHoverEffect = ({
           gradientUnits="userSpaceOnUse"
           r="20%"
           animate={maskPosition}
-          // transition={{ duration: duration ?? 0, ease: "easeOut" }}
-
-          // example for a smoother animation below
-
           transition={{
             type: "spring",
             stiffness: 300,
@@ -87,22 +83,21 @@ export const TextHoverEffect = ({
         </mask>
       </defs>
       <text
-        x="50%"
+        x="47.5%"
         y="50%"
         textAnchor="middle"
         dominantBaseline="middle"
         strokeWidth="0.3"
         className="fill-transparent stroke-neutral-200 font-[helvetica] text-7xl font-bold dark:stroke-neutral-800"
-        style={{ opacity: hovered ? 0.7 : 0 }}
       >
         {text}
       </text>
       <motion.text
-        x="50%"
+        x="48%"
         y="50%"
         textAnchor="middle"
         dominantBaseline="middle"
-        strokeWidth="0.3"
+        strokeWidth="1"
         className="fill-transparent stroke-neutral-200 font-[helvetica] text-7xl font-bold dark:stroke-neutral-800"
         initial={{ strokeDashoffset: 1000, strokeDasharray: 1000 }}
         animate={{
@@ -117,7 +112,7 @@ export const TextHoverEffect = ({
         {text}
       </motion.text>
       <text
-        x="50%"
+        x="49%"
         y="50%"
         textAnchor="middle"
         dominantBaseline="middle"

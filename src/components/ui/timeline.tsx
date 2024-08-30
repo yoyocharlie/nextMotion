@@ -6,6 +6,7 @@ import { sectionHeading } from "../projects/data";
 import Link from "next/link";
 import { Button } from "./button";
 import { LinkPreview } from "./link-preview";
+import { TextHoverEffect } from "./text-hover-effect";
 
 interface TimelineEntry {
   title: string;
@@ -51,22 +52,14 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
         >
           <Spotlight className="left-0 top-0" fill="white" />
         </motion.div>
-        <motion.div
-          initial={{ opacity: 0.5 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 1.5 }}
-          viewport={{ once: true, margin: "-200px" }}
-        >
-          <h2 className="text-28-50 relative mb-4 font-extrabold">
-            <span className="absolute left-0 mx-auto box-content w-fit select-none border bg-[#ffffff5f] bg-clip-text font-extrabold text-transparent blur-lg">
-              {sectionHeading.title}
-            </span>
+        <div>
+          <h2 className="relative text-28-50 font-extrabold">
             <span className="relative left-0 top-0 font-extrabold">
-              {sectionHeading.title}
+              <TextHoverEffect text={sectionHeading.title} />
             </span>
           </h2>
           <p className="text-muted-foreground">{sectionHeading.subTitle}</p>
-        </motion.div>
+        </div>
       </div>
 
       <div ref={ref} className="relative mx-auto max-w-7xl pb-20">
@@ -89,7 +82,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                 <div className="flex w-full gap-5">
                   {item.projectUrls?.map((project, i) => (
                     <LinkPreview key={i} url={project.url}>
-                      <Button className="shadow-[2px_2px_#00000069_inset] transition-all group-hover/card:shadow-[-1px_-1px_#00000069_inset]">
+                      <Button className="shadow-[2px_2px_#00000069_inset] transition-all duration-100 ease-in-out hover:translate-x-[-1px] hover:bg-white hover:shadow-[1px_1px_#00000069_inset]">
                         {project.icon}
                       </Button>
                     </LinkPreview>

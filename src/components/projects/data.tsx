@@ -5,7 +5,7 @@ import { Badge } from "../ui/badge";
 import { WobbleCard } from "../ui/wobble-card";
 
 export const sectionHeading = {
-  title: "Projects",
+  title: "PROJECTS",
   subTitle: "Let's dive into what I've been up to.",
 };
 

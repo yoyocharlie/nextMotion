@@ -1,17 +1,19 @@
 import { GlowText } from "./glow-text";
-import { title } from "../data";
+import { rotatingWords, title } from "../data";
+import { FlipWords } from "~/components/ui/flip-words";
 
 export function Title() {
   return (
-    <div className="relative grow basis-1 text-center">
-      <h1 className="text-48-96 mb-4 text-nowrap font-bold">
+    <div className="relative grow basis-1">
+      <h1 className="mb-4 text-nowrap text-48-96 font-bold">
         {title.plainText}
         {/* This is the cool glowy bit */}
         <GlowText text={title.glowText} />
       </h1>
-      <p className="mb-8 text-xl font-light text-muted-foreground">
+      <div className="mb-8 text-xl font-light text-muted-foreground">
         {title.subTitle}
-      </p>
+        <FlipWords words={rotatingWords} />
+      </div>
     </div>
   );
 }

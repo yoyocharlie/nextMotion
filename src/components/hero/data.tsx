@@ -4,8 +4,14 @@ import { IoLogoGithub } from "react-icons/io";
 export const title = {
   plainText: "Welcome to",
   glowText: "Modern UI",
-  subTitle: "From a passionate Fullstack Developer",
+  subTitle: "From a passionate",
 };
+
+export const rotatingWords = [
+  "fullstack developer",
+  "UI/UX enthusiast",
+  "cat dad",
+];
 
 export const profileCard = {
   title: "Jacob Pixler",
