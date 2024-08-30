@@ -3,7 +3,6 @@ import { useScroll, useTransform, motion } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 import { Spotlight } from "./spotlight";
 import { sectionHeading } from "../projects/data";
-import Link from "next/link";
 import { Button } from "./button";
 import { LinkPreview } from "./link-preview";
 import { TextHoverEffect } from "./text-hover-effect";
