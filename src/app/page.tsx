@@ -1,10 +1,12 @@
 import { About } from "~/components/about";
 import { Hero } from "~/components/hero";
+import { Navbar } from "~/components/navbar";
 import { Projects } from "~/components/projects";
 
 export default function HomePage() {
   return (
-    <main>
+    <main className="relative">
+      <Navbar />
       <Hero />
       <Projects />
       <About />

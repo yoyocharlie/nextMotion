@@ -75,7 +75,7 @@
 
 .text-48-96,
 .text-28-50 {
-  @apply leading-[1];
+  @apply leading-[0.8];
 }
 
 ::-webkit-scrollbar {

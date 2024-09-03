@@ -3,7 +3,7 @@ import { IoLogoGithub } from "react-icons/io";
 
 export const title = {
   plainText: "Welcome to",
-  glowText: "Modern UI",
+  glowText: "nextMotion",
   subTitle: "From a passionate",
 };
 

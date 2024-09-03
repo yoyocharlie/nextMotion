@@ -11,7 +11,7 @@ export function Title() {
         <GlowText text={title.glowText} />
       </h1>
       <div className="mb-8 text-center text-xl font-light text-muted-foreground lg:text-left">
-        {title.subTitle}
+        <span className="block lg:inline-block">{title.subTitle}</span>
         <FlipWords words={rotatingWords} />
       </div>
     </div>

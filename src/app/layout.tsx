@@ -4,8 +4,9 @@ import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Modern UI",
-  description: "Modern UI Portfolio",
+  title: "nextMotion",
+  description: "A Portfolio template built with Next.js",
+  icons: [{ url: "/swirl.svg", rel: "icon" }],
 };
 
 export default function RootLayout({
