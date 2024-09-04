@@ -58,7 +58,7 @@ export const WobbleCard = ({
           className={cn("h-full px-6 xl:px-10 xl:py-20", className)}
         >
           <Noise />
-          <span className="absolute">{children}</span>
+          {children}
         </motion.div>
       </div>
     </motion.section>
