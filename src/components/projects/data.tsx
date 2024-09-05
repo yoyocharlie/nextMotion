@@ -1,48 +1,13 @@
-"use client";
-
-import Image from "next/image";
 import { IoLogoGithub } from "react-icons/io";
 import { RiExternalLinkLine } from "react-icons/ri";
-import { Badge } from "../ui/badge";
-import { WobbleCard } from "../ui/wobble-card";
-import { BackgroundGradient } from "../ui/background-gradient";
-import Link from "next/link";
-import { Project } from "./ui/project";
+import type { TimelineEntry } from "../ui/timeline";
 
 export const sectionHeading = {
   title: "PROJECTS",
   subTitle: "Let's dive into what I've been up to.",
 };
 
-const tech = {
-  "cs-flashcards": [
-    "TypeScript",
-    "Next.js",
-    "TailwindCSS",
-    "shadcn/ui",
-    "tRPC",
-    "Prisma",
-    "Docker",
-    "Vercel Postgres",
-  ],
-  "Modern UI": [
-    "TypeScript",
-    "Next.js",
-    "TailwindCSS",
-    "Aceternity UI",
-    "Framer Motion",
-  ],
-  Gena: [
-    "JavaScript",
-    "Next.js",
-    "TailwindCSS",
-    "Ant Design",
-    "Express.js",
-    "MongoDB",
-  ],
-};
-
-export const timelineData = [
+export const timelineData: TimelineEntry[] = [
   {
     title: "cs-flashcards",
     projectUrls: [
@@ -55,24 +20,34 @@ export const timelineData = [
         icon: <IoLogoGithub size={20} />,
       },
     ],
-    content: (
-      <Project
-        tech={tech["cs-flashcards"]}
-        cards={{
-          title1: "Comprehensive Learning Tool",
-          text1: `Built with TypeScript and Next.js, this app offers a robust
-              platform to enhance your development skills. It&apos;s
+    imageUrl: "/images/cs-flashcards.png",
+    description: `A fullstack flashcards web app that I maintain as a valuable learning resource for both myself and the developer community. By open-sourcing this project, I aim to share knowledge and provide a practical tool for others to learn and grow in their development journey.`,
+    tech: [
+      "TypeScript",
+      "Next.js",
+      "TailwindCSS",
+      "shadcn/ui",
+      "tRPC",
+      "Prisma",
+      "Docker",
+      "Vercel Postgres",
+    ],
+    cards: {
+      a: {
+        title: "Comprehensive Learning Tool",
+        text: `Built with TypeScript and Next.js, this app offers a robust
+              platform to enhance your development skills. It's
               open-sourced to provide a practical tool and valuable knowledge to
               developers at any stage.`,
-          title2: "Easy Integration with Your DB of Choice",
-          text2: `Effortlessly integrate with your preferred database, including
+      },
+      b: {
+        title: "Easy Integration with Your DB of Choice",
+        text: `Effortlessly integrate with your preferred database, including
               SQLite for local use. Utilizing Prisma and tRPC, this app offers a
               flexible and scalable backend setup, making it easy to adapt and
               manage your data needs as you develop and expand your project.`,
-        }}
-        description={`A fullstack flashcards web app that I maintain as a valuable learning resource for both myself and the developer community. By open-sourcing this project, I aim to share knowledge and provide a practical tool for others to learn and grow in their development journey.`}
-      />
-    ),
+      },
+    },
   },
   {
     title: "nextMotion",
@@ -82,57 +57,25 @@ export const timelineData = [
         icon: <RiExternalLinkLine size={20} />,
       },
     ],
-    content: (
-      <div>
-        <p className="mb-8 text-muted-foreground">This very website!</p>
-        <div className="mb-8 flex flex-wrap gap-2">
-          {tech["Modern UI"].map((text) => (
-            <Badge
-              key={text}
-              className="h-5 cursor-default rounded-sm border-none shadow-[2px_2px_#00000069_inset] transition-all duration-100 ease-in-out hover:translate-x-[-1px] hover:bg-white hover:shadow-[1px_1px_#00000069_inset]"
-            >
-              {text}
-            </Badge>
-          ))}
-        </div>
-        <div className="grid grid-cols-2 gap-4">
-          <BackgroundGradient>
-            <Image
-              src="/images/modern-ui/modern-ui-2.png"
-              alt="startup template"
-              width={500}
-              height={500}
-              className="h-full w-full rounded-3xl object-cover"
-            />
-          </BackgroundGradient>
-          <WobbleCard containerClassName="w-full bg-blue-950" className="pt-2">
-            <h2 className="text-balance text-left text-base font-semibold tracking-[-0.015em] text-blue-950 md:text-xl lg:text-3xl">
-              Comprehensive Learning Tool
-            </h2>
-            <p className="mt-4 text-left text-sm text-neutral-200">
-              Built with TypeScript and Next.js, this app offers a robust
-              platform to enhance your development skills. It&apos;s
-              open-sourced to provide a practical tool and valuable knowledge to
-              developers at any stage.
-            </p>
-          </WobbleCard>
-          <WobbleCard
-            containerClassName="col-span-2 md:h-40 xl:h-40 h-20 w-full bg-violet-950"
-            className="py-2 xl:py-5"
-          >
-            <h2 className="text-balance text-left text-base font-semibold tracking-[-0.015em] text-violet-950 md:text-xl lg:text-3xl">
-              Easy Integration with Your DB of Choice
-            </h2>
-            <div className="mt-4 max-w-[700px] text-left text-sm text-neutral-200">
-              Effortlessly integrate with your preferred database, including
-              SQLite for local use. Utilizing Prisma and tRPC, this app offers a
-              flexible and scalable backend setup, making it easy to adapt and
-              manage your data needs as you develop and expand your project.
-            </div>
-          </WobbleCard>
-        </div>
-      </div>
-    ),
+    imageUrl: "/images/nextMotion.png",
+    description: `An open-source, opinionated portfolio template for creating a modern, reactive SPA portfolio.`,
+    tech: [
+      "TypeScript",
+      "Next.js",
+      "TailwindCSS",
+      "Aceternity UI",
+      "Framer Motion",
+    ],
+    cards: {
+      a: {
+        title: "Modern Reactive UI",
+        text: `This portfolio template offers a clean, modern, and fully responsive design. Built to be sleek and dynamic, it leverages the latest front-end technologies to ensure a smooth and engaging user experience, perfect for showcasing your projects and skills.`,
+      },
+      b: {
+        title: "Easy Customization & Integration",
+        text: `Seamlessly customize the portfolio to fit your unique style and preferences. With support for easy integration into various data sources, this opinionated template is designed to simplify the process of building a single-page application (SPA) portfolio that truly reflects your work.`,
+      },
+    },
   },
   {
     title: "Simple Joys (WIP)",
@@ -142,188 +85,25 @@ export const timelineData = [
         icon: <RiExternalLinkLine size={20} />,
       },
     ],
-    content: (
-      <div>
-        <p className="mb-8 text-muted-foreground">
-          Firstly, An order management system for customers to order
-          manufacturing labels from our printing facility. Secondly, an order
-          flow management system for our printing facility to process orders.
-        </p>
-        <div className="mb-8 flex flex-wrap gap-2">
-          {tech.Gena.map((text) => (
-            <Badge
-              key={text}
-              className="h-5 cursor-default rounded-sm border-none shadow-[2px_2px_#00000069_inset] transition-all duration-100 ease-in-out hover:translate-x-[-1px] hover:bg-white hover:shadow-[1px_1px_#00000069_inset]"
-            >
-              {text}
-            </Badge>
-          ))}
-        </div>
-        <div className="grid grid-cols-2 gap-4">
-          <BackgroundGradient>
-            <video
-              className="h-full w-full rounded-3xl object-cover"
-              autoPlay
-              muted
-              loop
-              playsInline
-            >
-              <source
-                src="/images/simple-joys/simple-joys-video.mp4"
-                type="video/mp4"
-              />
-              Your browser does not support this video.
-            </video>
-          </BackgroundGradient>
-          <WobbleCard containerClassName="w-full bg-cyan-900" className="pt-2">
-            <h2 className="text-balance text-left text-base font-semibold tracking-[-0.015em] text-cyan-900 md:text-xl lg:text-3xl">
-              Comprehensive Learning Tool
-            </h2>
-            <p className="mt-4 text-left text-sm text-neutral-200">
-              Built with TypeScript and Next.js, this app offers a robust
-              platform to enhance your development skills. It&apos;s
-              open-sourced to provide a practical tool and valuable knowledge to
-              developers at any stage.
-            </p>
-          </WobbleCard>
-          <WobbleCard
-            containerClassName="col-span-2 md:h-40 xl:h-40 h-20 w-full bg-slate-800"
-            className="py-2 xl:py-5"
-          >
-            <h2 className="text-balance text-left text-base font-semibold tracking-[-0.015em] text-slate-950 text-opacity-60 md:text-xl lg:text-3xl">
-              Easy Integration with Your DB of Choice
-            </h2>
-            <div className="mt-4 max-w-[700px] text-left text-sm text-neutral-200">
-              Effortlessly integrate with your preferred database, including
-              SQLite for local use. Utilizing Prisma and tRPC, this app offers a
-              flexible and scalable backend setup, making it easy to adapt and
-              manage your data needs as you develop and expand your project.
-            </div>
-          </WobbleCard>
-        </div>
-      </div>
-    ),
-  },
-  {
-    title: "Gena",
-    content: (
-      <div>
-        <p className="mb-8 text-muted-foreground">
-          Firstly, An order management system for customers to order
-          manufacturing labels from our printing facility. Secondly, an order
-          flow management system for our printing facility to process orders.
-        </p>
-        <div className="mb-8 flex flex-wrap gap-2">
-          {tech.Gena.map((text) => (
-            <Badge
-              key={text}
-              className="h-5 cursor-default rounded-sm border-none shadow-[2px_2px_#00000069_inset] transition-all duration-100 ease-in-out hover:translate-x-[-1px] hover:bg-white hover:shadow-[1px_1px_#00000069_inset]"
-            >
-              {text}
-            </Badge>
-          ))}
-        </div>
-        <div className="grid grid-cols-2 gap-4">
-          <BackgroundGradient>
-            <Image
-              src="/images/gena/gena-5.png"
-              alt="startup template"
-              width={500}
-              height={500}
-              className="h-full w-full rounded-3xl object-cover"
-            />
-          </BackgroundGradient>
-          <WobbleCard
-            containerClassName="w-full bg-neutral-900"
-            className="pt-2"
-          >
-            <h2 className="text-balance text-left text-base font-semibold tracking-[-0.015em] text-neutral-800 md:text-xl lg:text-3xl">
-              Comprehensive Learning Tool
-            </h2>
-            <p className="mt-4 text-left text-sm text-neutral-200">
-              Built with TypeScript and Next.js, this app offers a robust
-              platform to enhance your development skills. It&apos;s
-              open-sourced to provide a practical tool and valuable knowledge to
-              developers at any stage.
-            </p>
-          </WobbleCard>
-          <WobbleCard
-            containerClassName="col-span-2 md:h-40 xl:h-40 h-20 w-full bg-green-900"
-            className="py-2 xl:py-5"
-          >
-            <h2 className="text-balance text-left text-base font-semibold tracking-[-0.015em] text-green-950 text-opacity-60 md:text-xl lg:text-3xl">
-              Easy Integration with Your DB of Choice
-            </h2>
-            <div className="mt-4 max-w-[700px] text-left text-sm text-neutral-200">
-              Effortlessly integrate with your preferred database, including
-              SQLite for local use. Utilizing Prisma and tRPC, this app offers a
-              flexible and scalable backend setup, making it easy to adapt and
-              manage your data needs as you develop and expand your project.
-            </div>
-          </WobbleCard>
-        </div>
-      </div>
-    ),
-  },
-  {
-    title: "Biscuit",
-    content: (
-      <div>
-        <p className="mb-8 text-muted-foreground">
-          Firstly, An order management system for customers to order
-          manufacturing labels from our printing facility. Secondly, an order
-          flow management system for our printing facility to process orders.
-        </p>
-        <div className="mb-8 flex flex-wrap gap-2">
-          {tech.Gena.map((text) => (
-            <Badge
-              key={text}
-              className="h-5 cursor-default rounded-sm border-none shadow-[2px_2px_#00000069_inset] transition-all duration-100 ease-in-out hover:translate-x-[-1px] hover:bg-white hover:shadow-[1px_1px_#00000069_inset]"
-            >
-              {text}
-            </Badge>
-          ))}
-        </div>
-        <div className="grid grid-cols-2 gap-4">
-          <BackgroundGradient>
-            <Image
-              src="/images/biscuit/biscuit-4.png"
-              alt="startup template"
-              width={500}
-              height={500}
-              className="h-full w-full rounded-3xl object-cover"
-            />
-          </BackgroundGradient>
-          <WobbleCard
-            containerClassName="w-full bg-neutral-900"
-            className="pt-2"
-          >
-            <h2 className="text-balance text-left text-base font-semibold tracking-[-0.015em] text-neutral-800 md:text-xl lg:text-3xl">
-              Comprehensive Learning Tool
-            </h2>
-            <p className="mt-4 text-left text-sm text-neutral-200">
-              Built with TypeScript and Next.js, this app offers a robust
-              platform to enhance your development skills. It&apos;s
-              open-sourced to provide a practical tool and valuable knowledge to
-              developers at any stage.
-            </p>
-          </WobbleCard>
-          <WobbleCard
-            containerClassName="col-span-2 md:h-40 xl:h-40 h-20 w-full bg-green-900"
-            className="py-2 xl:py-5"
-          >
-            <h2 className="text-balance text-left text-base font-semibold tracking-[-0.015em] text-green-950 text-opacity-60 md:text-xl lg:text-3xl">
-              Easy Integration with Your DB of Choice
-            </h2>
-            <div className="mt-4 max-w-[700px] text-left text-sm text-neutral-200">
-              Effortlessly integrate with your preferred database, including
-              SQLite for local use. Utilizing Prisma and tRPC, this app offers a
-              flexible and scalable backend setup, making it easy to adapt and
-              manage your data needs as you develop and expand your project.
-            </div>
-          </WobbleCard>
-        </div>
-      </div>
-    ),
+    videoUrl: "/images/simple-joys-video.mp4",
+    description: `A cinematography portfolio built with Next.js and Sanity.io for fast page speeds and quick delivery of high quality assets.`,
+    tech: [
+      "TypeScript",
+      "Next.js",
+      "TailwindCSS",
+      "Framer Motion",
+      "tRPC",
+      "Sanity",
+    ],
+    cards: {
+      a: {
+        title: "Fast & Responsive Performance",
+        text: `Built with Next.js, this cinematography portfolio ensures lightning-fast page speeds and smooth navigation. High-quality video and image assets load efficiently, offering a seamless viewing experience without compromising on performance.`,
+      },
+      b: {
+        title: "Powered by Sanity.io",
+        text: `Leveraging Sanity.io, this portfolio delivers dynamic content and high-resolution assets with ease. Update your work in real-time and enjoy the flexibility of a powerful CMS, ensuring that your portfolio stays current and visually stunning.`,
+      },
+    },
   },
 ];

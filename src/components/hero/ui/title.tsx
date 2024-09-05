@@ -1,13 +1,29 @@
-import { GlowText } from "./glow-text";
-import { rotatingWords, title } from "../data";
-import { FlipWords } from "~/components/ui/flip-words";
+import { title } from "../data";
 import { Logo } from "~/components/ui/logo";
 
 export function Title() {
+  function parseForHighlightedWords(text: string) {
+    const wordsAndSpaces = text.split(/(\s+)/);
+
+    return wordsAndSpaces.map((chunk, index) => {
+      const isHighlighted = title.highlight.includes(
+        chunk.trim().toLowerCase(),
+      );
+
+      return (
+        <span
+          key={index}
+          className={`${isHighlighted ? "text-white drop-shadow-[0px_0px_3px_white]" : ""}`}
+        >
+          {chunk}
+        </span>
+      );
+    });
+  }
   return (
-    <div className="relative grow basis-1">
+    <div className="w-full grow basis-1">
       {/* Use cool glowy text */}
-      {/* <h1 className="text-nowrap text-center text-48-96 font-bold lg:text-left">
+      {/* <h1 className="text-nowrap text-center text-48-96 font-bold">
         {title.plainText}
         <GlowText text={title.glowText} />
       </h1> */}
@@ -15,12 +31,11 @@ export function Title() {
       {/* Or use a logo */}
       <h1 className="text-nowrap text-center text-48-96 font-bold">
         {title.plainText}
-        <Logo className="m-auto w-[400px]" glow />
+        <Logo className="w-300-600 m-auto" glow />
       </h1>
-      {/* <div className="mb-8 text-center text-xl font-light text-muted-foreground lg:text-left">
-        <span className="block lg:inline-block">{title.subTitle}</span>
-        <FlipWords words={rotatingWords} />
-      </div> */}
+      <div className="mb-8 text-center text-xl font-light text-muted-foreground">
+        {parseForHighlightedWords(title.subTitle)}
+      </div>
     </div>
   );
 }

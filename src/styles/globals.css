@@ -34,6 +34,7 @@
 
     --fluid-48-96: clamp(48px, 31.3043px + 5.2174vw, 96px);
     --fluid-28-50: clamp(28px, 20.3478px + 2.3913vw, 50px);
+    --fluid-300-600: clamp(300px, 195.6522px + 32.6087vw, 600px);
   }
 
   .dark {

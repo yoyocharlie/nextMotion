@@ -6,15 +6,28 @@ import { sectionHeading } from "../projects/data";
 import { Button } from "./button";
 import { LinkPreview } from "./link-preview";
 import { TextHoverEffect } from "./text-hover-effect";
+import { Project } from "../projects/ui/project";
+import Link from "next/link";
 
-interface TimelineEntry {
+type ProjectUrl = {
+  url: string;
+  icon: JSX.Element;
+};
+
+type Card = {
   title: string;
-  projectUrls?: {
-    url: string;
-    icon: JSX.Element;
-  }[];
-  content: React.ReactNode;
-}
+  text: string;
+};
+
+export type TimelineEntry = {
+  title: string;
+  description: string;
+  tech: string[];
+  cards: { a: Card; b: Card };
+  imageUrl?: string;
+  videoUrl?: string;
+  projectUrls?: ProjectUrl[];
+};
 
 export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -52,7 +65,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
           <Spotlight className="left-0 top-0" fill="white" />
         </motion.div>
         <div>
-          <h2 className="relative text-28-50 font-extrabold">
+          <h2 className="relative font-extrabold">
             <span className="relative left-0 top-0 font-extrabold">
               <TextHoverEffect text={sectionHeading.title} />
             </span>
@@ -69,7 +82,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
           >
             <div className="sticky top-40 z-40 flex max-w-xs flex-col items-center self-start md:w-full md:flex-row lg:max-w-sm">
               <div className="absolute left-3 flex h-10 w-10 items-center justify-center rounded-full bg-black md:left-3">
-                <div className="h-4 w-4 rounded-full border border-neutral-700 bg-neutral-800 p-2" />
+                <div className="h-4 w-4 rounded-full border border-neutral-700 bg-neutral-400 p-2" />
               </div>
               <motion.h3
                 initial={{ opacity: 0.5 }}
@@ -90,11 +103,20 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
               </motion.h3>
             </div>
 
-            <div className="relative w-full pl-20 pr-4 md:pl-4">
-              <h3 className="mb-4 block text-left text-2xl font-bold text-neutral-500 md:hidden">
-                {item.title}
+            <div className="relative w-full pl-14 pr-4 md:pl-4">
+              <h3 className="mb-4 block space-y-4 text-left text-2xl font-bold md:hidden">
+                <span>{item.title}</span>
+                <div className="flex w-full gap-5">
+                  {item.projectUrls?.map((project, i) => (
+                    <Link key={i} href={project.url} target="_blank">
+                      <Button className="shadow-[2px_2px_#00000069_inset] transition-all duration-100 ease-in-out hover:translate-x-[-1px] hover:bg-white hover:shadow-[1px_1px_#00000069_inset]">
+                        {project.icon}
+                      </Button>
+                    </Link>
+                  ))}
+                </div>
               </h3>
-              {item.content}
+              <Project {...item} />
             </div>
           </div>
         ))}
