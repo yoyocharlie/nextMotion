@@ -1,7 +1,7 @@
 import { BackgroundGradient } from "~/components/ui/background-gradient";
 import { Badge } from "~/components/ui/badge";
 import Image from "next/image";
-import { Noise, WobbleCard } from "~/components/ui/wobble-card";
+import { WobbleCard } from "~/components/ui/wobble-card";
 import type { TimelineEntry } from "~/components/ui/timeline";
 import { usePalette } from "color-thief-react";
 import {
@@ -22,7 +22,9 @@ export function Project({
   const { data } = usePalette(imageUrl ?? "", 8, "hex");
   return (
     <div>
-      <p className="mb-8 text-muted-foreground">{description}</p>
+      <p className="mb-8 font-extralight text-muted-foreground">
+        {description}
+      </p>
       <div className="mb-8 flex flex-wrap gap-2">
         {tech.map((text) => (
           <Badge

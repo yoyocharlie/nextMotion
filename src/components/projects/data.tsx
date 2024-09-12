@@ -3,7 +3,7 @@ import { RiExternalLinkLine } from "react-icons/ri";
 import type { TimelineEntry } from "../ui/timeline";
 
 export const sectionHeading = {
-  title: "PROJECTS",
+  title: "What I'm working on",
   subTitle: "Let's dive into what I've been up to.",
 };
 

@@ -33,7 +33,7 @@
     /* Fluid sizing */
 
     --fluid-48-96: clamp(48px, 31.3043px + 5.2174vw, 96px);
-    --fluid-28-50: clamp(28px, 20.3478px + 2.3913vw, 50px);
+    --fluid-24-40: clamp(24px, 18.4348px + 1.7391vw, 40px);
     --fluid-300-600: clamp(300px, 195.6522px + 32.6087vw, 600px);
   }
 
@@ -72,11 +72,9 @@
   body {
     @apply bg-background text-foreground;
   }
-}
-
-.text-48-96,
-.text-28-50 {
-  @apply leading-[0.8];
+  .gradient-text {
+    @apply bg-gradient-to-t from-neutral-400 to-neutral-50 bg-clip-text text-transparent;
+  }
 }
 
 ::-webkit-scrollbar {

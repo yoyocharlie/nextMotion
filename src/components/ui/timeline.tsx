@@ -1,11 +1,9 @@
 "use client";
 import { useScroll, useTransform, motion } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
-import { Spotlight } from "./spotlight";
 import { sectionHeading } from "../projects/data";
 import { Button } from "./button";
 import { LinkPreview } from "./link-preview";
-import { TextHoverEffect } from "./text-hover-effect";
 import { Project } from "../projects/ui/project";
 import Link from "next/link";
 
@@ -51,27 +49,13 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
   return (
     <div className="w-full font-sans" ref={containerRef}>
-      <div className="mx-auto">
-        <motion.div
-          initial={{
-            opacity: 0,
-          }}
-          whileInView={{
-            opacity: 1,
-          }}
-          transition={{ duration: 1 }}
-          viewport={{ once: true, margin: "-200px" }}
-        >
-          <Spotlight className="left-0 top-0" fill="white" />
-        </motion.div>
-        <div>
-          <h2 className="relative font-extrabold">
-            <span className="relative left-0 top-0 font-extrabold">
-              <TextHoverEffect text={sectionHeading.title} />
-            </span>
-          </h2>
-          <p className="text-muted-foreground">{sectionHeading.subTitle}</p>
-        </div>
+      <div className="flex flex-col items-center justify-center gap-2 md:flex-row md:items-baseline md:gap-5">
+        <h2 className="gradient-text text-24-40 text-center font-extrabold">
+          {sectionHeading.title}
+        </h2>
+        <p className="font-light text-muted-foreground">
+          {sectionHeading.subTitle}
+        </p>
       </div>
 
       <div ref={ref} className="relative mx-auto max-w-7xl pb-20">

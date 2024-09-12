@@ -102,7 +102,7 @@ const config = {
       },
       fontSize: {
         "48-96": "var(--fluid-48-96)",
-        "28-50": "var(--fluid-28-50)",
+        "24-40": "var(--fluid-24-40)",
       },
       spacing: {
         "300-600": "var(--fluid-300-600)",
