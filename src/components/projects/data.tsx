@@ -53,8 +53,12 @@ export const timelineData: TimelineEntry[] = [
     title: "nextMotion",
     projectUrls: [
       {
-        url: "https://modern-ui-starter.vercel.app",
+        url: "https://next-motion-five.vercel.app/",
         icon: <RiExternalLinkLine size={20} />,
+      },
+      {
+        url: "https://github.com/yoyocharlie/nextMotion",
+        icon: <IoLogoGithub size={20} />,
       },
     ],
     imageUrl: "/images/nextMotion.png",

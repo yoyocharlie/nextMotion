@@ -6,6 +6,7 @@ import { Button } from "./button";
 import { LinkPreview } from "./link-preview";
 import { Project } from "../projects/ui/project";
 import Link from "next/link";
+import { SectionHeading } from "./section-heading";
 
 type ProjectUrl = {
   url: string;
@@ -49,15 +50,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
   return (
     <div className="w-full font-sans" ref={containerRef}>
-      <div className="flex flex-col items-center justify-center gap-2 md:flex-row md:items-baseline md:gap-5">
-        <h2 className="gradient-text text-24-40 text-center font-extrabold">
-          {sectionHeading.title}
-        </h2>
-        <p className="font-light text-muted-foreground">
-          {sectionHeading.subTitle}
-        </p>
-      </div>
-
+      <SectionHeading title={sectionHeading.title} subTitle={sectionHeading.subTitle} />
       <div ref={ref} className="relative mx-auto max-w-7xl pb-20">
         {data.map((item, index) => (
           <div

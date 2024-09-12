@@ -97,7 +97,7 @@ export function Project({
         </WobbleCard>
         <Accordion type="multiple" className="block lg:hidden">
           <AccordionItem value="item-1">
-            <AccordionTrigger>{cards.a.title}</AccordionTrigger>
+            <AccordionTrigger className="text-left">{cards.a.title}</AccordionTrigger>
             <AccordionContent>{cards.a.text}</AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
