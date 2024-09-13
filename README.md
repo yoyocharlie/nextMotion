@@ -2,7 +2,7 @@
 
 <h4 align="center">An open-source portfolio template</h4>
 
-<h3 align="center"><img width="700" alt="demo" src="images/nextMotion.png" /></h3>
+<h3 align="center"><img width="700" alt="demo" src="nextMotion.png" /></h3>
 
 ---
 
