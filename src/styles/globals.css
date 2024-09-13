@@ -93,3 +93,92 @@
 body::-webkit-scrollbar-thumb:active {
   background-color: #434343;
 }
+
+#markdown {
+  font-size: 16px;
+  color: rgb(183, 183, 183);
+}
+
+#markdown h1,
+#markdown h2,
+#markdown h3,
+#markdown h4,
+#markdown h5,
+#markdown h6 {
+  margin: 1em 0;
+  font-weight: bold;
+  color: #cfcece;
+}
+
+#markdown h1 {
+  font-size: 2em;
+}
+
+#markdown h2 {
+  font-size: 1.75em;
+}
+
+#markdown h3 {
+  font-size: 1.5em;
+}
+
+#markdown h4 {
+  font-size: 1.25em;
+}
+
+#markdown h5 {
+  font-size: 1.1em;
+}
+
+#markdown h6 {
+  font-size: 1em;
+}
+
+#markdown p {
+  margin: 0 0 1em;
+}
+
+#markdown ul,
+#markdown ol {
+  margin: 0 0 1em 2em;
+}
+
+#markdown ul {
+  list-style-type: disc;
+}
+
+#markdown ol {
+  list-style-type: decimal;
+}
+
+#markdown blockquote {
+  border-left: 4px solid #ddd;
+  padding-left: 1em;
+  margin: 0 0 1em;
+  font-style: italic;
+  color: #666;
+}
+
+#markdown code {
+  font-family: monospace;
+  background-color: #4f4f4f;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+}
+
+#markdown pre {
+  background-color: #3d3d3d;
+  padding: 1em;
+  border-radius: 4px;
+  overflow: auto;
+  font-family: monospace;
+  white-space: pre;
+}
+
+#markdown a {
+  text-decoration: underline;
+}
+
+#markdown a:hover {
+  text-decoration: none;
+}

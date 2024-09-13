@@ -50,12 +50,15 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
   return (
     <div className="w-full font-sans" ref={containerRef}>
-      <SectionHeading title={sectionHeading.title} subTitle={sectionHeading.subTitle} />
+      <SectionHeading
+        title={sectionHeading.title}
+        subTitle={sectionHeading.subTitle}
+      />
       <div ref={ref} className="relative mx-auto max-w-7xl pb-20">
         {data.map((item, index) => (
           <div
             key={index}
-            className="flex justify-start pt-10 md:gap-10 md:pt-40"
+            className="flex justify-start pt-10 md:gap-10 md:pt-20"
           >
             <div className="sticky top-40 z-40 flex max-w-xs flex-col items-center self-start md:w-full md:flex-row lg:max-w-sm">
               <div className="absolute left-3 flex h-10 w-10 items-center justify-center rounded-full bg-black md:left-3">
