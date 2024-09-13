@@ -40,7 +40,7 @@ export function Form() {
           />
         </LabelInputContainer>
       </div>
-      <div className="mb-5">
+      <div>
         <label className="mb-3 flex flex-col md:flex-row">
           <span className="flex flex-col items-baseline gap-1 md:flex-row">
             <span>Message</span>
