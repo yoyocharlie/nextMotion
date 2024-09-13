@@ -55,5 +55,6 @@ To run this project locally, follow the steps below:
 
 - Your application should now be running on `http://localhost:3000`.
 
-> [!IMPORTANT]  
-> Since our `/api/email` endpoint requires a server to execute the nodemailer functionality, you'll want to deploy your project through a service that supports serverless functions. Personally, I used [Vercel](https://vercel.com/).
+### A note on deployment
+
+Since our `/api/email` endpoint requires a server to execute the nodemailer functionality, you'll want to deploy your project through a service that supports serverless functions. Personally, I used [Vercel](https://vercel.com/).
