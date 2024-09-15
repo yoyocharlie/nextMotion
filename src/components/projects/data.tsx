@@ -12,10 +12,6 @@ export const timelineData: TimelineEntry[] = [
     title: "cs-flashcards",
     projectUrls: [
       {
-        url: "https://cs-flashcards.vercel.app",
-        icon: <RiExternalLinkLine size={20} />,
-      },
-      {
         url: "https://github.com/yoyocharlie/cs-flashcards-open",
         icon: <IoLogoGithub size={20} />,
       },
