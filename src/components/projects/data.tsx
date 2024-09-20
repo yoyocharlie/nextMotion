@@ -1,4 +1,3 @@
-import { IoLogoGithub } from "react-icons/io";
 import { RiExternalLinkLine } from "react-icons/ri";
 import type { TimelineEntry } from "../ui/timeline";
 
@@ -10,12 +9,13 @@ export const sectionHeading = {
 export const timelineData: TimelineEntry[] = [
   {
     title: "cs-flashcards",
-    projectUrls: [
-      {
-        url: "https://github.com/yoyocharlie/cs-flashcards-open",
-        icon: <IoLogoGithub size={20} />,
+    projectUrls: {
+      repo: {
+        owner: "yoyocharlie",
+        name: "cs-flashcards-open",
+        showStarCount: false,
       },
-    ],
+    },
     imageUrl: "/images/cs-flashcards.png",
     description: `A fullstack flashcards web app that I maintain as a valuable learning resource for both myself and the developer community. By open-sourcing this project, I aim to share knowledge and provide a practical tool for others to learn and grow in their development journey.`,
     tech: [
@@ -47,16 +47,17 @@ export const timelineData: TimelineEntry[] = [
   },
   {
     title: "nextMotion",
-    projectUrls: [
-      {
+    projectUrls: {
+      site: {
         url: "https://next-motion-five.vercel.app/",
         icon: <RiExternalLinkLine size={20} />,
       },
-      {
-        url: "https://github.com/yoyocharlie/nextMotion",
-        icon: <IoLogoGithub size={20} />,
+      repo: {
+        name: "nextMotion",
+        owner: "yoyocharlie",
+        showStarCount: true,
       },
-    ],
+    },
     imageUrl: "/images/nextMotion.png",
     description: `An open-source, opinionated portfolio template for creating a modern, reactive SPA portfolio.`,
     tech: [
@@ -79,12 +80,12 @@ export const timelineData: TimelineEntry[] = [
   },
   {
     title: "Simple Joys (WIP)",
-    projectUrls: [
-      {
+    projectUrls: {
+      site: {
         url: "https://simplejoysmedia.com",
         icon: <RiExternalLinkLine size={20} />,
       },
-    ],
+    },
     videoUrl: "/images/simple-joys-video.mp4",
     description: `A cinematography portfolio built with Next.js and Sanity.io for fast page speeds and quick delivery of high quality assets.`,
     tech: [
