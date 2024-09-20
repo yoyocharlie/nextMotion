@@ -6,9 +6,9 @@ export function Title() {
     const wordsAndSpaces = text.split(/(\s+)/);
 
     return wordsAndSpaces.map((chunk, index) => {
-      const isHighlighted = title.highlight.includes(
-        chunk.trim().toLowerCase(),
-      );
+      const isHighlighted = title.highlight
+        .map((word) => word.toLowerCase())
+        .includes(chunk.trim().toLowerCase());
 
       return (
         <span
